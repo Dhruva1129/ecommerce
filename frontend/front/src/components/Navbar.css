@@ -1,0 +1,174 @@
+/* Navbar.css */
+
+/* General styling */
+/* body {
+  margin: 0;
+  background-color: #fff;
+  color: #000;
+} */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 80vw;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #555;
+}
+
+/* Responsive menu button */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/* Dropdown Container */
+.account-dropdown {
+  position: absolute;
+  top: 25px; /* Adjust based on navbar height */
+  right: 0px; /* Adjust based on navbar padding */
+  background-color: #fff; /* White background for the dropdown */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 10px;
+  z-index: 1000; /* Ensure dropdown is above other elements */
+}
+
+.account-dropdown button {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.account-dropdown button:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.account-details {
+  margin-bottom: 10px;
+}
+
+/* Links inside the dropdown */
+.account-dropdown a {
+  display: block;
+  padding: 10px 15px; /* Add spacing for better touch targets */
+  text-decoration: none; /* Remove underlines */
+  color: #333; /* Dark gray text */
+  font-size: 14px; /* Adjust font size */
+  border-radius: 5px; /* Rounded edges for links */
+  transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for links */
+.account-dropdown a:hover {
+  background-color: #f0f0f0; /* Light gray hover background */
+  color: #000; /* Black text on hover */
+}
+
+/* Optional: Dropdown container alignment */
+.account-icon {
+  position: relative; /* Ensure the dropdown aligns relative to this container */
+}
+
+/* Example: Prevent dropdown from collapsing on smaller screens */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icons */
+}
+
+.account-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+    row-gap: 15px;
+    padding: 20px 0 20px 0;
+  }
+
+  .menu-icon {
+    font-size: 15px;
+    display: block;
+  }
+}
+
+/* Cart and Login/Logout buttons */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-icons i {
+  font-size: 2rem;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-icons i:hover {
+  color: #555;
+}

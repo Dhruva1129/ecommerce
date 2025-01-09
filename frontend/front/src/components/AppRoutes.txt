@@ -1,0 +1,32 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { AuthContext } from "./Context/AuthContext";
+import Login from "./Login";
+import AdminDashboard from "./AdminProducts/AdminDashboard";
+import Products from "./Home";
+
+const AppRoutes = () => {
+    const { user } = React.useContext(AuthContext);
+
+    return (
+        <Router>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route
+                    path="/admin"
+                    element={
+                        user?.role === "admin" ? <AdminDashboard /> : <Navigate to="/login" />
+                    }
+                />
+                <Route
+                    path="/"
+                    element={
+                        user?.role === "customer" ? <Products /> : <Navigate to="/login" />
+                    }
+                />
+            </Routes>
+        </Router>
+    );
+};
+
+export default AppRoutes;
